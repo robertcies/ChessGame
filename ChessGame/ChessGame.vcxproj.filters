@@ -18,10 +18,21 @@
     <ClCompile Include="UnbelievableChessgame1.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="ChessBoard.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UnbelievableChessgame1.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
+    <ClInclude Include="ChessBoard.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UnbelievableChessgame1.resx">
+      <Filter>Pliki zasobów</Filter>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

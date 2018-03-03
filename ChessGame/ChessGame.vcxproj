@@ -134,9 +134,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ChessBoard.cpp" />
     <ClCompile Include="UnbelievableChessgame1.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ChessBoard.h" />
     <ClInclude Include="UnbelievableChessgame1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
