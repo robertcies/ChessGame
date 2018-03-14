@@ -23,8 +23,8 @@ void main(array<String^>^ args)
 	Application::Run(%form);// ##################################### ODPALA WINDOWS FORM #######
 	
 	ChessFigure CreateFigures();
-
-
+	
+		
 	
 
 	/*std::cout << "TEST";

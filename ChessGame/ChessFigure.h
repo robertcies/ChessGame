@@ -24,12 +24,11 @@ public:
 	int NewPositionY;
 	ChessFigure** figures = new ChessFigure*[32];
 
-	bool IsSelected(int);
-	int WhereToMove(int,int); // Wprowadzane nowe wartosci x,y
-	std::string GetColor(int,int);
-	void CreateFigures();
-	//int	 CreatePawns(int);
-	bool GetFigure(int, int);
+	bool IsSelected(int);		// Is Figure selected? (clicked with mouse) If selected then player can not select any other figure
+	int WhereToMove(int,int); // Provide values x,y
+	std::string GetColor(int,int);	//get color of figure on the x,y square
+	void CreateFigures();		// Create figures (begining of the game)
+	bool GetFigure(int, int);	//get figure on the x,y square ---------------->eventually delete this figure?/??????????????
 
 
 	
