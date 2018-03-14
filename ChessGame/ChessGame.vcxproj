@@ -135,10 +135,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChessBoard.cpp" />
+    <ClCompile Include="ChessFigure.cpp" />
+    <ClCompile Include="Pawn.cpp" />
     <ClCompile Include="UnbelievableChessgame1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChessBoard.h" />
+    <ClInclude Include="ChessFigure.h" />
+    <ClInclude Include="Pawn.h" />
     <ClInclude Include="UnbelievableChessgame1.h">
       <FileType>CppForm</FileType>
     </ClInclude>

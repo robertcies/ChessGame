@@ -41,6 +41,8 @@ namespace ChessGame {
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::TextBox^  textBox1;
 	private: System::Windows::Forms::TextBox^  textBox2;
+
+
 	protected:
 
 	protected:
@@ -100,7 +102,8 @@ namespace ChessGame {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(856, 368);
+			this->label1->BackColor = System::Drawing::SystemColors::ActiveBorder;
+			this->label1->Location = System::Drawing::Point(856, 365);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(125, 17);
 			this->label1->TabIndex = 3;
@@ -164,6 +167,10 @@ namespace ChessGame {
 private: System::Void label2_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void panel1_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+}
+private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }
