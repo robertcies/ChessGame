@@ -6,7 +6,7 @@
 
 ChessFigure::ChessFigure()
 {
-	//test
+	//test1
 }
 
 ChessFigure::~ChessFigure()
