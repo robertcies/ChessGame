@@ -25,7 +25,7 @@ Pawn::~Pawn()
 
 void Pawn::Upgrade(int desired_value) //CHANGE PAWN TO ANY OTHER FIGURE
 {
-	//Change pawn value to desired value
+	//Change pawn value to desired value OR MAYBE.....
 	//delete pawn and create new object (queen/rook/bishop etc.)
 }
 

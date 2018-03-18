@@ -6,9 +6,7 @@
 
 ChessBoard::ChessBoard() 
 {
-	
 	CreateBoard();
-
 }
 
 ChessBoard::~ChessBoard()

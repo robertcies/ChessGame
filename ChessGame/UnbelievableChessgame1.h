@@ -21,7 +21,24 @@ namespace ChessGame {
 			//
 			//TODO: W tym miejscu dodaj kod konstruktora
 			//
+
 		}
+		/*
+	public:
+		void DrawRectangleInt(PaintEventArgs^ e)
+		{
+			// Create pen.
+			Pen^ blackPen = gcnew Pen(Color::Black, 3.0f);
+
+			// Create location and size of rectangle.
+			int x = 0;
+			int y = 0;
+			int width = 200;
+			int height = 200;
+
+			// Draw rectangle to screen.
+			e->Graphics->DrawRectangle(blackPen, x, y, width, height);
+		}*/
 
 	protected:
 		/// <summary>
@@ -41,6 +58,7 @@ namespace ChessGame {
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::TextBox^  textBox1;
 	private: System::Windows::Forms::TextBox^  textBox2;
+	private: System::Windows::Forms::Panel^  panel1;
 
 
 	protected:
@@ -68,6 +86,7 @@ namespace ChessGame {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->SuspendLayout();
 			// 
 			// Newgame_button
@@ -135,11 +154,20 @@ namespace ChessGame {
 			this->textBox2->Size = System::Drawing::Size(57, 22);
 			this->textBox2->TabIndex = 6;
 			// 
+			// panel1
+			// 
+			this->panel1->Location = System::Drawing::Point(138, 70);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(337, 316);
+			this->panel1->TabIndex = 7;
+			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &UnbelievableChessgame::panel1_Paint_1);
+			// 
 			// UnbelievableChessgame
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1376, 473);
+			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label2);
@@ -151,6 +179,7 @@ namespace ChessGame {
 			this->Name = L"UnbelievableChessgame";
 			this->Text = L"UnbelievableChessgame";
 			this->Load += gcnew System::EventHandler(this, &UnbelievableChessgame::UnbelievableChessgame_Load);
+			this->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &UnbelievableChessgame::panel1_Paint);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -172,5 +201,12 @@ private: System::Void panel1_Paint(System::Object^  sender, System::Windows::For
 }
 private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  e) {
 }
+private: System::Void panel1_Paint_1(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+
+	Graphics^ g = e->Graphics;
+	g->FillRectangle(Brushes::Pink, 170, 10, 75, 75);
+	g->DrawRectangle(Pens::Black, 170, 10, 75, 75);
+}
 };
 }
+

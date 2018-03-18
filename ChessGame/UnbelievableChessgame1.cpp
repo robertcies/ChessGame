@@ -21,7 +21,7 @@ void main(array<String^>^ args)
 	Application::SetCompatibleTextRenderingDefault(false);
 	ChessGame::UnbelievableChessgame form;
 	Application::Run(%form);// ##################################### ODPALA WINDOWS FORM #######
-	
+	//void DrawRectangleInt(PaintEventArgs^ e);
 	ChessFigure CreateFigures();
 	
 
