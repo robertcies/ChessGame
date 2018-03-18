@@ -24,8 +24,7 @@ void main(array<String^>^ args)
 	
 	ChessFigure CreateFigures();
 	
-		
-	
+
 
 	/*std::cout << "TEST";
 	board.UpdateBoard();

@@ -91,6 +91,14 @@ void ChessBoard::CreateBoard()
 	 }
 	 getchar();
  }
-
+ void ChessBoard::SetFigures(int posx, int posy)
+ {
+	 /*
+	 for (int i = 0; i < 32; i++)
+	 {
+		 ChessFigure::figures[i]
+	 }
+ */
+ }
 
 

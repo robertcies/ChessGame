@@ -1,7 +1,6 @@
 #include "Pawn.h"
 #include "ChessBoard.h"
 #include "ChessFigure.h"
-
 #include <iostream>
 #include <string> 
 #include <stdlib.h>
@@ -27,6 +26,7 @@ Pawn::~Pawn()
 void Pawn::Upgrade(int desired_value) //CHANGE PAWN TO ANY OTHER FIGURE
 {
 	//Change pawn value to desired value
+	//delete pawn and create new object (queen/rook/bishop etc.)
 }
 
 bool Pawn::IsMovePossible(int newX, int newY)

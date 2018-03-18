@@ -6,8 +6,7 @@
 
 ChessFigure::ChessFigure()
 {
-	//test1
-	//test2
+
 }
 
 ChessFigure::~ChessFigure()
@@ -19,7 +18,7 @@ bool ChessFigure::IsSelected(int)
 	return 0;
 }
 
-int ChessFigure::WhereToMove(int newX,int newY) 
+int ChessFigure::WhereToMove(int newX,int newY) // // onClick method? should provide ending values?
 {
 	NewPosiionX = newX;
 	NewPositionY = newY;
@@ -63,7 +62,7 @@ bool ChessFigure::GetFigure(int PosX, int PosY) //check if there is any figure o
 													{
 	for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
 	{
-		if (figures[i]->PositionX ==PosX && figures[i]->PositionX == PosY)  
+		if (figures[i]->PositionX ==PosX && figures[i]->PositionY == PosY)  
 		{
 			return true;
 		}			
@@ -75,8 +74,133 @@ std::string ChessFigure::GetColor(int PosX, int PosY) //check color of this spec
 {
 	for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
 	{
-		if (figures[i]->PositionX == PosX && figures[i]->PositionX == PosY)
+		if (figures[i]->PositionX == PosX && figures[i]->PositionY == PosY)
 		return figures[i]->Color;
 	}
 	return "NoMatch";
+}
+
+bool ChessFigure::CheckVertical(int startx, int starty, int finishy) // onClick method? should provide starting and ending values?
+{
+
+		if (starty < finishy) //move down
+		{
+
+			for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
+			{	
+				if (figures[i]->PositionX == startx)
+				{
+						if(starty<figures[i]->PositionY<finishy+1)
+						return false;								//return false when find first object on path
+				}
+			}
+			return true;
+		}
+		else				// move up
+		{
+			for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
+			{
+				if (figures[i]->PositionX == startx)
+				{
+					if (finishy -1 <figures[i]->PositionY<starty)
+						return false;								//return true when find first object on path
+				}
+			}
+			return true;
+		}
+
+}
+
+bool ChessFigure::CheckHorizontal(int startx, int starty, int finishx)  // onClick method? should provide starting and ending values?
+{
+
+	if (startx < finishx) //move right
+	{
+
+		for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
+		{
+			if (figures[i]->PositionY == starty)
+			{
+				if (startx<figures[i]->PositionX<finishx + 1)
+					return false;								//return false when find first object on path
+			}
+		}
+		return true;
+	}
+	else				// move left
+	{
+		for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
+		{
+			if (figures[i]->PositionY == starty)
+			{
+				if (finishx - 1 <figures[i]->PositionX<startx)
+					return false;								//return true when find first object on path
+			}
+		}
+		return true;
+	}
+}
+
+bool ChessFigure::CheckDiagonal(int startx, int starty, int finishx, int finishy)  // onClick method? should provide starting and ending values?
+{
+	if (startx < finishx && starty>finishy) //move up-right
+	{
+		for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
+		{
+			for (int j = 1; j <= finishx - startx; j++)
+			{
+				if (figures[i]->PositionY == starty-j && figures[i]->PositionX == startx + j)
+				{
+						return false;								//return false when find first object on path
+				}
+			}
+		}
+		return true;
+	}
+
+	if (startx > finishx && starty>finishy) //move up-left
+	{
+		for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
+		{
+			for (int j = 1; j <= startx - finishx; j++)
+			{
+				if (figures[i]->PositionY == starty - j && figures[i]->PositionX == startx - j)
+				{
+					return false;								//return false when find first object on path
+				}
+			}
+		}
+		return true;
+	}
+
+	if (startx < finishx && starty<finishy) //move dwown-right
+	{
+		for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
+		{
+			for (int j = 1; j <= finishx - startx; j++)
+			{
+				if (figures[i]->PositionY == starty + j && figures[i]->PositionX == startx + j)
+				{
+					return false;								//return false when find first object on path
+				}
+			}
+		}
+		return true;
+	}
+
+	if (startx > finishx && starty<finishy) //move down-left
+	{
+		for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
+		{
+			for (int j = 1; j <= startx - finishx; j++)
+			{
+				if (figures[i]->PositionY == starty + j && figures[i]->PositionX == startx - j)
+				{
+					return false;								//return false when find first object on path
+				}
+			}
+		}
+		return true;
+	}
+
 }

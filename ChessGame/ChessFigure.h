@@ -29,7 +29,10 @@ public:
 	std::string GetColor(int,int);	//get color of figure on the x,y square
 	void CreateFigures();		// Create figures (begining of the game)
 	bool GetFigure(int, int);	//get figure on the x,y square ---------------->eventually delete this figure?/??????????????
-
+	
+	bool CheckVertical(int, int, int);
+	bool CheckHorizontal(int, int, int);
+	bool CheckDiagonal(int, int, int,int);
 
 	
 };

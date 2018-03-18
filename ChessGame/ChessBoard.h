@@ -21,6 +21,7 @@ public:
 	int BoardHeight = 8;
 
 	void CreateBoard();
+	void SetFigures(int, int);	// ############################### ZROBIC FUNKCJE ###################
 	void UpdateBoard();
 
 
