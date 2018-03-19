@@ -1,3 +1,4 @@
+#pragma once
 #ifndef Pawn_h
 #define Pawn_h
 #include "ChessFigure.h"
@@ -18,4 +19,4 @@ public:
 
 };
 
-#endif#pragma once
+#endif

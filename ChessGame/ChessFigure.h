@@ -34,6 +34,8 @@ public:
 	bool CheckHorizontal(int, int, int);
 	bool CheckDiagonal(int, int, int,int);
 
+
+	//Czy IsMovePossible nie powinno byæ tutaj, w ChessFigure?
 	
 };
 

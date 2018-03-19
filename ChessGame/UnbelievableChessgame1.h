@@ -156,9 +156,9 @@ namespace ChessGame {
 			// 
 			// panel1
 			// 
-			this->panel1->Location = System::Drawing::Point(138, 70);
+			this->panel1->Location = System::Drawing::Point(100, 50);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(337, 316);
+			this->panel1->Size = System::Drawing::Size(550, 550);
 			this->panel1->TabIndex = 7;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &UnbelievableChessgame::panel1_Paint_1);
 			// 
@@ -204,8 +204,28 @@ private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  
 private: System::Void panel1_Paint_1(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
 
 	Graphics^ g = e->Graphics;
-	g->FillRectangle(Brushes::Pink, 170, 10, 75, 75);
-	g->DrawRectangle(Pens::Black, 170, 10, 75, 75);
+	for (int j = 0; j < 8; j ++)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			g->FillRectangle(Brushes::White, 50 + i * 100, 50 * j, 50, 50);
+			g->DrawRectangle(Pens::Brown, 50 + i * 100, 50 * j, 50, 50);
+			g->FillRectangle(Brushes::Black, 0 + i * 100, 50 * j, 50, 50);
+			g->DrawRectangle(Pens::Brown, 0 + i * 100, 50 * j, 50, 50);
+		}
+		j++;
+	}
+	for (int j = 1; j < 9; j++)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			g->FillRectangle(Brushes::Black, 50 + i * 100, 50 * j, 50, 50);
+			g->DrawRectangle(Pens::Brown, 50 + i * 100, 50 * j, 50, 50);
+			g->FillRectangle(Brushes::White, 0 + i * 100, 50 * j, 50, 50);
+			g->DrawRectangle(Pens::Brown, 0 + i * 100, 50 * j, 50, 50);
+		}
+		j++;
+	}
 }
 };
 }

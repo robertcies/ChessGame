@@ -134,15 +134,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bishop.cpp" />
     <ClCompile Include="ChessBoard.cpp" />
     <ClCompile Include="ChessFigure.cpp" />
+    <ClCompile Include="Knight.cpp" />
     <ClCompile Include="Pawn.cpp" />
+    <ClCompile Include="Rook.cpp" />
     <ClCompile Include="UnbelievableChessgame1.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bishop.h" />
     <ClInclude Include="ChessBoard.h" />
     <ClInclude Include="ChessFigure.h" />
+    <ClInclude Include="Knight.h" />
     <ClInclude Include="Pawn.h" />
+    <ClInclude Include="Rook.h" />
     <ClInclude Include="UnbelievableChessgame1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
