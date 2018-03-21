@@ -22,40 +22,75 @@ Knight::~Knight()
 }
 
 bool Knight::IsMovePossible(int newX, int newY)	// information from on-click method???
-{/*
+{
  
 	int move1;
 	int move2;
 	//Check if move is possible
 	bool is_move_possible = false;
 
-		move1 = 2;
-		move2 = 1;
+		move2 = 2;
+		move1 = 1;
 
 
-	// 1 square forward
-	if (newY == PositionY + move1 && newX == PositionX && GetFigure(newX, newY) == false)
+	// move up on board
+	if (newY == PositionY - move2)
 	{
-		is_move_possible = true;
-	}
-
-	// 2 squares forward (only fisrt move of specific pawn)
-	else if (newY == (PositionY + move2) && newX == PositionX && GetFigure(newX, newY) == false)
-	{
-		is_move_possible = true;
-	}
-
-	// Diagonal left or right(only attack)
-	else if (newY == PositionY + move1 && (newX == PositionX - 1 || newX == PositionX + 1))
-	{
-		// Check if there is a opposite color piece in the diagonal position
-		if (GetFigure(newX, newY) != false && GetFigure(newX, newY) == false && GetColor(newX, newY) != this->Color)
+		//move right
+		if (newX == PositionX + move1 && ((GetFigure(newX, newY) == true && GetColor(newX, newY) != this->Color) || GetFigure(newX, newY) == false))
 		{
-			is_move_possible = true;
+			return is_move_possible = true;
+		}
+		//move left
+		if (newX == PositionX - move1 && ((GetFigure(newX, newY) == true && GetColor(newX, newY) != this->Color) || GetFigure(newX, newY) == false))
+		{
+			return is_move_possible = true;
 		}
 	}
-	return is_move_possible; //retrun flag after validation of the move
+	// move right on board
+	if (newX == PositionX + move2)
+	{
+		//move up
+		if (newY == PositionY - move1 && ((GetFigure(newX, newY) == true && GetColor(newX, newY) != this->Color) || GetFigure(newX, newY) == false))
+		{
+			return is_move_possible = true;
+		}
+		//move down
+		if (newY == PositionY + move1 && ((GetFigure(newX, newY) == true && GetColor(newX, newY) != this->Color) || GetFigure(newX, newY) == false))
+		{
+			return is_move_possible = true;
+		}
+	}
+	// move down on board
+	if (newY == PositionY + move2)
+	{
+		//move right
+		if (newX == PositionX + move1 && ((GetFigure(newX, newY) == true && GetColor(newX, newY) != this->Color) || GetFigure(newX, newY) == false))
+		{
+			return is_move_possible = true;
+		}
+		//move left
+		if (newX == PositionX - move1 && ((GetFigure(newX, newY) == true && GetColor(newX, newY) != this->Color) || GetFigure(newX, newY) == false))
+		{
+			return is_move_possible = true;
+		}
+	}
+	// move left on board
+	if (newX == PositionX - move2)
+	{
+		//move up
+		if (newY == PositionY - move1 && ((GetFigure(newX, newY) == true && GetColor(newX, newY) != this->Color) || GetFigure(newX, newY) == false))
+		{
+			return is_move_possible = true;
+		}
+		//move down
+		if (newY == PositionY + move1 && ((GetFigure(newX, newY) == true && GetColor(newX, newY) != this->Color) || GetFigure(newX, newY) == false))
+		{
+			return is_move_possible = true;
+		}
+	}
 
-	*/
-	return true;
+	return is_move_possible = false; //retrun flag after validation of the move
+
+
 }

@@ -89,26 +89,33 @@ bool ChessFigure::CheckVertical(int startx, int starty, int finishy) // onClick 
 			for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
 			{	
 				if (figures[i]->PositionX == startx)
-				{
-						if(starty<figures[i]->PositionY<finishy+1)
-						return false;								//return false when find first object on path
-				}
-			}
-			return true;
-		}
-		else				// move up
-		{
-			for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
-			{
-				if (figures[i]->PositionX == startx)
-				{
-					if (finishy -1 <figures[i]->PositionY<starty)
-						return false;								//return true when find first object on path
+				{		//normal move
+						if(starty < figures[i]->PositionY<finishy)
+							return false;																//return false when find first object on path
+						//fight
+						if (starty < figures[i]->PositionY == finishy && GetColor(startx, finishy) != this->Color)
+							return true;														//return true when finishy is on the square where piece has opposite color
 				}
 			}
 			return true;
 		}
 
+		if (starty > finishy)				// move up
+		{
+			for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
+			{
+				if (figures[i]->PositionX == startx)
+				{	//Normal move
+					if (finishy < figures[i]->PositionY < starty)
+						return false;								//return false when find first object on path
+					//Fight
+					if (finishy == figures[i]->PositionY < starty && GetColor(startx, finishy) != this->Color)
+						return true;								//return true when finishy is on the square where piece has opposite color
+				}
+			}
+			return true;
+		}
+		return false;												//return false when player want to move this figure in different way than vertical
 }
 
 bool ChessFigure::CheckHorizontal(int startx, int starty, int finishx)  // onClick method? should provide starting and ending values?
@@ -120,25 +127,32 @@ bool ChessFigure::CheckHorizontal(int startx, int starty, int finishx)  // onCli
 		for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
 		{
 			if (figures[i]->PositionY == starty)
-			{
-				if (startx<figures[i]->PositionX<finishx + 1)
+			{	//normal move
+				if (startx < figures[i]->PositionX < finishx )
 					return false;								//return false when find first object on path
+				//Fight
+				if (startx < figures[i]->PositionX == finishx && GetColor(finishx, starty) != this->Color)
+					return true;								//return true when finishy is on the square where piece has opposite color
 			}
 		}
 		return true;
 	}
-	else				// move left
+	if(startx > finishx)				// move left
 	{
 		for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
 		{
 			if (figures[i]->PositionY == starty)
-			{
-				if (finishx - 1 <figures[i]->PositionX<startx)
-					return false;								//return true when find first object on path
+			{	//normal move
+				if (finishx < figures[i]->PositionX < startx)
+					return false;								//return false when find first object on path
+				//Fight
+				if (finishx == figures[i]->PositionX < startx && GetColor(finishx, starty) != this->Color)
+					return true;								//return true when finishy is on the square where piece has opposite color
 			}
 		}
 		return true;
 	}
+	return false;												//return false when player want to move this figure in different way than horizontal
 }
 
 bool ChessFigure::CheckDiagonal(int startx, int starty, int finishx, int finishy)  // onClick method? should provide starting and ending values?
@@ -147,13 +161,18 @@ bool ChessFigure::CheckDiagonal(int startx, int starty, int finishx, int finishy
 	{
 		for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
 		{
-			for (int j = 1; j <= finishx - startx; j++)
+			for (int j = 1; j < finishx - startx; j++)
 			{
 				if (figures[i]->PositionY == starty-j && figures[i]->PositionX == startx + j)
 				{
-						return false;								//return false when find first object on path
+					return false;								//return false when find first object on path
 				}
 			}
+			//Fight
+			if (figures[i]->PositionY == finishy && figures[i]->PositionX == finishx && GetColor(finishx, finishy) != this->Color && (finishx-startx)==(starty-finishy)) //check if diagonal (ostatni warunek)
+				{
+					return true;								////return true when finish is on the square where piece has opposite color
+				}
 		}
 		return true;
 	}
@@ -162,12 +181,17 @@ bool ChessFigure::CheckDiagonal(int startx, int starty, int finishx, int finishy
 	{
 		for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
 		{
-			for (int j = 1; j <= startx - finishx; j++)
+			for (int j = 1; j < startx - finishx; j++)
 			{
 				if (figures[i]->PositionY == starty - j && figures[i]->PositionX == startx - j)
 				{
 					return false;								//return false when find first object on path
 				}
+			}
+			//Fight
+			if (figures[i]->PositionY == finishy && figures[i]->PositionX == finishx && GetColor(finishx, finishy) != this->Color && (finishx-startx) == (starty-finishy))
+			{
+				return true;								////return true when finish is on the square where piece has opposite color
 			}
 		}
 		return true;
@@ -177,12 +201,17 @@ bool ChessFigure::CheckDiagonal(int startx, int starty, int finishx, int finishy
 	{
 		for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
 		{
-			for (int j = 1; j <= finishx - startx; j++)
+			for (int j = 1; j < finishx - startx; j++)
 			{
 				if (figures[i]->PositionY == starty + j && figures[i]->PositionX == startx + j)
 				{
 					return false;								//return false when find first object on path
 				}
+			}
+			//Fight
+			if (figures[i]->PositionY == finishy && figures[i]->PositionX == finishx && GetColor(finishx, finishy) != this->Color && (finishy-starty)==(finishx-startx))
+			{
+				return true;								////return true when finish is on the square where piece has opposite color
 			}
 		}
 		return true;
@@ -192,15 +221,22 @@ bool ChessFigure::CheckDiagonal(int startx, int starty, int finishx, int finishy
 	{
 		for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
 		{
-			for (int j = 1; j <= startx - finishx; j++)
+			for (int j = 1; j < startx - finishx; j++)
 			{
 				if (figures[i]->PositionY == starty + j && figures[i]->PositionX == startx - j)
 				{
 					return false;								//return false when find first object on path
 				}
 			}
+			//Fight
+			if (figures[i]->PositionY == finishy && figures[i]->PositionX == finishx && GetColor(finishx, finishy) != this->Color && (finishy-starty)==(startx-finishx))
+			{
+				return true;								////return true when finish is on the square where piece has opposite color
+			}
 		}
 		return true;
 	}
+
+	return false;												//return false when player want to move this figure in different way than diagonal
 
 }

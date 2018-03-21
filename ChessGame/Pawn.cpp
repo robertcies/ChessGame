@@ -66,10 +66,11 @@ bool Pawn::IsMovePossible(int newX, int newY)
 	else if (newY == PositionY + move1 && (newX == PositionX - 1 || newX == PositionX + 1)) 
 	{
 		// Check if there is a opposite color piece in the diagonal position
-		if (GetFigure(newX,newY) != false && GetFigure(newX, newY) == false && GetColor(newX, newY) != this->Color)
+		if (GetFigure(newX,newY) == true &&  GetColor(newX, newY) != this->Color)
 		{
 			is_move_possible = true;
 		}
+		is_move_possible = false;
 	}
 	return is_move_possible; //retrun flag after validation of the move
 }
