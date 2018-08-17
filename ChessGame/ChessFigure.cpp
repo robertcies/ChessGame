@@ -39,7 +39,7 @@ void ChessFigure::CreateFigures()
 	}
 	/* #################################################### CLASSES Queen, king etc. need to be implemented first ##########################
 	// WHITE
-	figures[16] = new Queen("white", true, 7, 3);
+	figures[16] = new Queeen("white", true, 7, 3);
 	figures[17] = new King("white", true, 7, 4);
 	figures[18] = new Bishop("white", true, 7, 5);
 	figures[19] = new Bishop("white", true, 7, 2);
@@ -48,7 +48,7 @@ void ChessFigure::CreateFigures()
 	figures[22] = new Knight("white", true, 7, 1);
 	figures[23] = new Knight("white", true, 7, 6);
 	//BLACK
-	figures[24] = new Queen("black", true, 0, 3);
+	figures[24] = new Queeen("black", true, 0, 3);
 	figures[25] = new King("black", true, 0, 4);
 	figures[26] = new Bishop("black", true, 0, 2);
 	figures[27] = new Bishop("black", true, 0, 5);

@@ -24,20 +24,19 @@ Queeen::~Queeen()
 bool Queeen::IsMovePossible(int newX, int newY)	// information from on-click method???
 {
 
-	//Check if move is possible
-	bool is_move_possible = false;
 
-	if (newX != PositionX)
+	if (newX != PositionX && newY == PositionY)
 	{
-		return CheckHorizontal(PositionX, PositionY, newX);  //return value returned by method CheckHorizontal
+		return CheckHorizontal(PositionX, newX, PositionY, newY);  //return value returned by method CheckHorizontal
 	}
-	if (newY != PositionY)
+	if (newY != PositionY && newX == PositionX)
 	{
-		return CheckVertical(PositionX, PositionY, newY);	//return value returned by method CheckVertical
+		return CheckVertical(PositionX, newX, PositionY, newY);	//return value returned by method CheckVertical
+	}	
+	if (PositionX != newX && PositionY != newY)
+	{
+		return CheckDiagonal(PositionX, PositionY, newX, newY);
 	}
 
-	return CheckDiagonal(PositionX, PositionY, newX, newY);
-
-
-	return is_move_possible; //retrun flag after validation of the move
+	return false;
 }
