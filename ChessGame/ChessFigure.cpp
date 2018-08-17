@@ -80,40 +80,44 @@ std::string ChessFigure::GetColor(int PosX, int PosY) //check color of this spec
 	return "NoMatch";
 }
 
-bool ChessFigure::CheckVertical(int startx, int starty, int finishy) // onClick method? should provide starting and ending values?
+bool ChessFigure::CheckVertical(int startx,int finishx, int starty, int finishy) // onClick method? should provide starting and ending values?
 {
-
-		if (starty < finishy) //move down
-		{
-
-			for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
-			{	
-				if (figures[i]->PositionX == startx)
-				{
-						if(starty<figures[i]->PositionY<finishy+1)
-						return false;								//return false when find first object on path
-				}
-			}
-			return true;
-		}
-		else				// move up
-		{
-			for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
+	if (startx != finishx && starty != finishy)
+	{
+		return false;
+	}
+	if (starty < finishy) //move down
+	{
+		for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
+		{	
+			if (figures[i]->PositionX == startx)
 			{
-				if (figures[i]->PositionX == startx)
-				{
-					if (finishy -1 <figures[i]->PositionY<starty)
-						return false;								//return true when find first object on path
-				}
+				if(starty<figures[i]->PositionY<finishy+1)
+					return false;								//return false when find first object on path
 			}
-			return true;
 		}
-
+		return true;
+	}
+	else				// move up
+	{
+		for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
+		{
+			if (figures[i]->PositionX == startx)
+			{
+				if (finishy -1 <figures[i]->PositionY<starty)
+					return false;								//return true when find first object on path
+			}
+		}
+		return true;
+	}
 }
 
-bool ChessFigure::CheckHorizontal(int startx, int starty, int finishx)  // onClick method? should provide starting and ending values?
+bool ChessFigure::CheckHorizontal(int startx, int finishx, int starty,int finishy )  // onClick method? should provide starting and ending values?
 {
-
+	if (startx != finishx && starty != finishy)
+	{
+		return false;
+	}
 	if (startx < finishx) //move right
 	{
 
@@ -202,5 +206,5 @@ bool ChessFigure::CheckDiagonal(int startx, int starty, int finishx, int finishy
 		}
 		return true;
 	}
-
+	return false;
 }

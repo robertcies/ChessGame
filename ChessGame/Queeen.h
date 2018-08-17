@@ -1,15 +1,15 @@
 #pragma once
-#ifndef Knight_h
-#define Knight_h
+#ifndef Queeen_h
+#define Queeen_h
 #include "ChessFigure.h"
 #include "ChessBoard.h"
 #include "UnbelievableChessgame1.h"
 
-class Knight : public ChessFigure
+class Queeen : public ChessFigure
 {
 public:
-	Knight(string, bool, int, int);
-	~Knight();
+	Queeen(string, bool, int, int);
+	~Queeen();
 
 	bool IsMovePossible(int, int);		// validation of movement  ------->maybe highlit possible ways of selected figure?
 };

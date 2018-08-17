@@ -22,40 +22,60 @@ Knight::~Knight()
 }
 
 bool Knight::IsMovePossible(int newX, int newY)	// information from on-click method???
-{/*
+{
  
-	int move1;
-	int move2;
 	//Check if move is possible
 	bool is_move_possible = false;
 
-		move1 = 2;
-		move2 = 1;
-
-
-	// 1 square forward
-	if (newY == PositionY + move1 && newX == PositionX && GetFigure(newX, newY) == false)
+	if (newX - PositionX > 0) // right side
 	{
-		is_move_possible = true;
-	}
-
-	// 2 squares forward (only fisrt move of specific pawn)
-	else if (newY == (PositionY + move2) && newX == PositionX && GetFigure(newX, newY) == false)
-	{
-		is_move_possible = true;
-	}
-
-	// Diagonal left or right(only attack)
-	else if (newY == PositionY + move1 && (newX == PositionX - 1 || newX == PositionX + 1))
-	{
-		// Check if there is a opposite color piece in the diagonal position
-		if (GetFigure(newX, newY) != false && GetFigure(newX, newY) == false && GetColor(newX, newY) != this->Color)
+		if (newY - PositionY > 0) //1st æwiartka
 		{
-			is_move_possible = true;
+			if ( abs (newY - PositionY) == 2 && abs (newX - PositionX) == 1 && GetFigure(newX,newY) == false )
+			{
+				is_move_possible = true;
+			}
+			if(abs(newY - PositionY) == 1 && abs(newX - PositionX) == 2 && GetFigure(newX, newY) == false)
+			{
+				is_move_possible = true;
+			}
+		}			
+		if (newY - PositionY < 0) //2nd æwiartka
+		{
+			if ( abs (newY - PositionY) == 2 && abs (newX - PositionX) == 1 && GetFigure(newX,newY) == false )
+			{
+				is_move_possible = true;
+			}
+			if(abs(newY - PositionY) == 1 && abs(newX - PositionX) == 2 && GetFigure(newX, newY) == false)
+			{
+				is_move_possible = true;
+			}
+		}	
+	}	
+	if (newX - PositionX < 0) // left side
+	{
+		if (newY - PositionY < 0) //3rd æwiartka
+		{
+			if (abs(newY - PositionY) == 2 && abs(newX - PositionX) == 1 && GetFigure(newX, newY) == false)
+			{
+				is_move_possible = true;
+			}
+			if (abs(newY - PositionY) == 1 && abs(newX - PositionX) == 2 && GetFigure(newX, newY) == false)
+			{
+				is_move_possible = true;
+			}
+		}
+		if (newY - PositionY > 0) //4th æwiartka
+		{
+			if (abs(newY - PositionY) == 2 && abs(newX - PositionX) == 1 && GetFigure(newX, newY) == false)
+			{
+				is_move_possible = true;
+			}
+			if (abs(newY - PositionY) == 1 && abs(newX - PositionX) == 2 && GetFigure(newX, newY) == false)
+			{
+				is_move_possible = true;
+			}
 		}
 	}
 	return is_move_possible; //retrun flag after validation of the move
-
-	*/
-	return true;
 }

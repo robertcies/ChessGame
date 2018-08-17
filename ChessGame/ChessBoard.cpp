@@ -23,7 +23,7 @@ void ChessBoard::CreateBoard()
 	 for (int i = 0; i<BoardWidth; i++)
 		 Board[1][i] = 'P';
 	 for (int i = 0; i<BoardWidth; i++)
-		 Board[6][i] = 'P';
+		 Board[6][i] = 'p';
 
 	 Board[0][3] = 'Q';
 	 Board[0][0] = 'W';
@@ -33,14 +33,14 @@ void ChessBoard::CreateBoard()
 	 Board[0][5] = 'G';
 	 Board[0][6] = 'K';
 	 Board[0][7] = 'W';
-	 Board[7][0] = 'W';
-	 Board[7][1] = 'K';
-	 Board[7][2] = 'G';
-	 Board[7][3] = 'Q';
-	 Board[7][4] = "Ki";
-	 Board[7][5] = 'G';
-	 Board[7][6] = 'K';
-	 Board[7][7] = 'W';
+	 Board[7][0] = 'w';
+	 Board[7][1] = 'k';
+	 Board[7][2] = 'g';
+	 Board[7][3] = 'q';
+	 Board[7][4] = "ki";
+	 Board[7][5] = 'g';
+	 Board[7][6] = 'k';
+	 Board[7][7] = 'w';
 	 
 /* OPENCV wymagane
 	 int blockSize = 75;

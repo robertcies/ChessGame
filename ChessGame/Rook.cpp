@@ -25,11 +25,11 @@ bool Rook::IsMovePossible(int newX, int newY)	// information from on-click metho
 {
 	if (newX != PositionX)
 	{
-		return CheckHorizontal(PositionX, PositionY, newX);  //return value returned by method CheckHorizontal
+		return CheckHorizontal(PositionX, newX, PositionY, newY);  //return value returned by method CheckHorizontal
 	}
 	if (newY != PositionY)
 	{
-		return CheckVertical(PositionX, PositionY, newY);	//return value returned by method CheckVertical
+		return CheckVertical(PositionX, newX, PositionY, newY);	//return value returned by method CheckVertical
 	}
 }
 
