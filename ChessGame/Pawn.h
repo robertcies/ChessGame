@@ -10,7 +10,7 @@
 class Pawn : public ChessFigure
 {
 public:
-	Pawn(string, bool, int, int);
+	Pawn(string, bool, int, int,string);
 	~Pawn();
 
 	void Upgrade(int);					// upgrade to other figures when pawn reaches end of the board

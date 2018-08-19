@@ -8,7 +8,9 @@
 using namespace System;
 using namespace System::Windows::Forms;
 
+//ChessFigure figure;
 ChessBoard board; //Global variable
+
 
 [STAThread]
 
@@ -25,7 +27,7 @@ void main(array<String^>^ args)
 	ChessFigure CreateFigures();
 	*/
 
-
+	//figure.CreateFigures();
 	std::cout << "TEST";
 	board.UpdateBoard();
 	board.Board[1][4] = ' ';

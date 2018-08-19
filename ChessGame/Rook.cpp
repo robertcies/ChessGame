@@ -8,10 +8,11 @@
 
 extern ChessBoard board; //object board is declared in main.cpp ->is is needed here in IsMovePossible function (extern informs compiler about that)
 
-Rook::Rook(string col, bool stat, int posx, int posy)
+Rook::Rook(string col, bool stat, int posx, int posy,string nickname)
 {
 	Color = col;
 	Status = stat;
+	Nickname = nickname;
 	Value = 50;
 	PositionX = posx;
 	PositionY = posy;

@@ -8,10 +8,11 @@
 
 extern ChessBoard board; //object board is declared in main.cpp ->is is needed here in IsMovePossible function (extern informs compiler about that)
 
-Knight::Knight(string col, bool stat, int posx, int posy)
+Knight::Knight(string col, bool stat, int posx, int posy,string nickanme)
 {
 	Color = col;
 	Status = stat;
+	Nickname = nickanme;
 	Value = 60;
 	PositionX = posx;
 	PositionY = posy;

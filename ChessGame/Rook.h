@@ -8,7 +8,7 @@
 class Rook : public ChessFigure
 {
 public:
-	Rook(string, bool, int, int);
+	Rook(string, bool, int, int,string);
 	~Rook();
 
 	bool IsMovePossible(int, int);		// validation of movement  ------->maybe highlit possible ways of selected figure?

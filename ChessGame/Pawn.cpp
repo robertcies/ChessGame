@@ -9,11 +9,12 @@
 
 extern ChessBoard board; //object board is declared in main.cpp ->is is needed here in IsMovePossible function (extern informs compiler about that)
 
-Pawn::Pawn(string col, bool stat, int posx, int posy)
+Pawn::Pawn(string col, bool stat, int posx, int posy,string nickname)
 {
 	Color = col;
 	Status = stat;
 	Value = 10;
+	Nickname = nickname;
 	PositionX = posx;
 	PositionY = posy;
 	double_move = true;

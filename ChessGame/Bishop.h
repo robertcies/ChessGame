@@ -8,7 +8,7 @@
 class Bishop : public ChessFigure
 {
 public:
-	Bishop(string, bool, int, int);
+	Bishop(string, bool, int, int, string);
 	~Bishop();
 
 	bool IsMovePossible(int, int);		// validation of movement  ------->maybe highlit possible ways of selected figure?
