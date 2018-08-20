@@ -27,15 +27,16 @@ void ChessBoard::CreateBoard()
 	 for (int i = 0; i<BoardWidth; i++)
 		 Board[6][i] = 'p';
 
+	 tab.CreateFigures();
 	 // Board[tab.figures[16]->PositionX][tab.figures[16]->PositionY] = tab.figures[16]->Nickname  ########tak powinno byc???/????????
 	 Board[0][3] = tab.figures[16]->Nickname; //Queen
-	 /*Board[0][0] = tab.figures[20]->Nickname; // ROOK
+	 Board[0][0] = tab.figures[20]->Nickname; // ROOK
 	 Board[0][1] = tab.figures[22]->Nickname; //Knight
 	 Board[0][2] = tab.figures[18]->Nickname; //Bishop
 	 Board[0][4] = tab.figures[17]->Nickname; // King
 	 Board[0][5] = tab.figures[19]->Nickname; //Bishop
 	 Board[0][6] = tab.figures[23]->Nickname; // Knight
-	 Board[0][7] = tab.figures[21]->Nickname; // Rook*/
+	 Board[0][7] = tab.figures[21]->Nickname; // Rook
 	/* Board[7][0] = 'w';
 	 Board[7][1] = 'k';
 	 Board[7][2] = 'g';

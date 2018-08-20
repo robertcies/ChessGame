@@ -11,7 +11,7 @@
 
 ChessFigure::ChessFigure()
 {
-	CreateFigures();
+
 }
 
 ChessFigure::~ChessFigure()
