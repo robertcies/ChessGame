@@ -1,4 +1,4 @@
-#include "Rook.h"
+#include "Queeen.h"
 #include "ChessBoard.h"
 #include "ChessFigure.h"
 #include <iostream>
@@ -8,31 +8,36 @@
 
 extern ChessBoard board; //object board is declared in main.cpp ->is is needed here in IsMovePossible function (extern informs compiler about that)
 
-Rook::Rook(string col, bool stat, int posx, int posy,string nickname)
+Queeen::Queeen(string col, bool stat, int posx, int posy,string nickname)
 {
 	Color = col;
 	Status = stat;
 	Nickname = nickname;
-	Value = 50;
+	Value = 120;
 	PositionX = posx;
 	PositionY = posy;
 }
 
-Rook::~Rook()
+Queeen::~Queeen()
 {
 }
 
-bool Rook::IsMovePossible(int newX, int newY)	// information from on-click method???
+bool Queeen::IsMovePossible(int newX, int newY)	// information from on-click method???
 {
-	if (newX != PositionX)
+
+
+	if (newX != PositionX && newY == PositionY)
 	{
 		return CheckHorizontal(PositionX, newX, PositionY, newY);  //return value returned by method CheckHorizontal
 	}
-	if (newY != PositionY)
+	if (newY != PositionY && newX == PositionX)
 	{
 		return CheckVertical(PositionX, newX, PositionY, newY);	//return value returned by method CheckVertical
+	}	
+	if (PositionX != newX && PositionY != newY)
+	{
+		return CheckDiagonal(PositionX, PositionY, newX, newY);
 	}
+
+	return false;
 }
-
-
-

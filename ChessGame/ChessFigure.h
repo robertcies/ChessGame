@@ -20,9 +20,10 @@ public:
 	int Value; //wartoœæ figury (potrzebna przy zmianie i obliczaniu winRatio
 	int PositionX; // 
 	int PositionY;
+	string Nickname;
 	int NewPosiionX;
 	int NewPositionY;
-	ChessFigure** figures = new ChessFigure*[32];
+	ChessFigure** figures = new ChessFigure*[32]; //tablica wska¿ników na ChessFigure
 
 	bool IsSelected(int);		// Is Figure selected? (clicked with mouse) If selected then player can not select any other figure
 	int WhereToMove(int,int); // Provide values x,y
@@ -30,8 +31,8 @@ public:
 	void CreateFigures();		// Create figures (begining of the game)
 	bool GetFigure(int, int);	//get figure on the x,y square ---------------->eventually delete this figure?/??????????????
 	
-	bool CheckVertical(int, int, int);
-	bool CheckHorizontal(int, int, int);
+	bool CheckVertical(int,int, int, int);
+	bool CheckHorizontal(int, int,int, int);
 	bool CheckDiagonal(int, int, int,int);
 
 

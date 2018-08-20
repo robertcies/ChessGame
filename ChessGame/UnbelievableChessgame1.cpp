@@ -8,7 +8,9 @@
 using namespace System;
 using namespace System::Windows::Forms;
 
+//ChessFigure figure;
 ChessBoard board; //Global variable
+
 
 [STAThread]
 
@@ -16,21 +18,21 @@ ChessBoard board; //Global variable
 
 void main(array<String^>^ args)
 {
-	
+	/*
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
 	ChessGame::UnbelievableChessgame form;
 	Application::Run(%form);// ##################################### ODPALA WINDOWS FORM #######
 	//void DrawRectangleInt(PaintEventArgs^ e);
 	ChessFigure CreateFigures();
-	
+	*/
 
-
-	/*std::cout << "TEST";
+	//figure.CreateFigures();
+	std::cout << "TEST";
 	board.UpdateBoard();
 	board.Board[1][4] = ' ';
 	board.Board[3][4] = 'P';
 	board.UpdateBoard();
 	//board.GetFigure(1, 1);
-	*/
+	
 }

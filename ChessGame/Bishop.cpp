@@ -8,10 +8,11 @@
 
 extern ChessBoard board; //object board is declared in main.cpp ->is is needed here in IsMovePossible function (extern informs compiler about that)
 
-Bishop::Bishop(string col, bool stat, int posx, int posy)
+Bishop::Bishop(string col, bool stat, int posx, int posy, string nickname)
 {
 	Color = col;
 	Status = stat;
+	Nickname = nickname;
 	Value = 60;
 	PositionX = posx;
 	PositionY = posy;

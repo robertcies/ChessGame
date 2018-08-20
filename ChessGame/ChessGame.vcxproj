@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -140,7 +140,7 @@
     <ClCompile Include="King.cpp" />
     <ClCompile Include="Knight.cpp" />
     <ClCompile Include="Pawn.cpp" />
-    <ClCompile Include="Queen.cpp" />
+    <ClCompile Include="Queeen.cpp" />
     <ClCompile Include="Rook.cpp" />
     <ClCompile Include="UnbelievableChessgame1.cpp" />
   </ItemGroup>
@@ -151,7 +151,7 @@
     <ClInclude Include="King.h" />
     <ClInclude Include="Knight.h" />
     <ClInclude Include="Pawn.h" />
-    <ClInclude Include="Queen.h" />
+    <ClInclude Include="Queeen.h" />
     <ClInclude Include="Rook.h" />
     <ClInclude Include="UnbelievableChessgame1.h">
       <FileType>CppForm</FileType>

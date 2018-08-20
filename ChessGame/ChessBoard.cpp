@@ -7,6 +7,7 @@
 ChessBoard::ChessBoard() 
 {
 	CreateBoard();
+	
 }
 
 ChessBoard::~ChessBoard()
@@ -15,6 +16,7 @@ ChessBoard::~ChessBoard()
 
 void ChessBoard::CreateBoard()
 {
+	ChessFigure tab;
 	 for (int i = 1; i<BoardHeight-2; i++)
 		 for (int j = 0; j<BoardWidth; j++)
 		 {
@@ -23,42 +25,26 @@ void ChessBoard::CreateBoard()
 	 for (int i = 0; i<BoardWidth; i++)
 		 Board[1][i] = 'P';
 	 for (int i = 0; i<BoardWidth; i++)
-		 Board[6][i] = 'P';
+		 Board[6][i] = 'p';
 
-	 Board[0][3] = 'Q';
-	 Board[0][0] = 'W';
-	 Board[0][1] = 'K';
-	 Board[0][2] = 'G';
-	 Board[0][4] = "Ki";
-	 Board[0][5] = 'G';
-	 Board[0][6] = 'K';
-	 Board[0][7] = 'W';
-	 Board[7][0] = 'W';
-	 Board[7][1] = 'K';
-	 Board[7][2] = 'G';
-	 Board[7][3] = 'Q';
-	 Board[7][4] = "Ki";
-	 Board[7][5] = 'G';
-	 Board[7][6] = 'K';
-	 Board[7][7] = 'W';
+	 // Board[tab.figures[16]->PositionX][tab.figures[16]->PositionY] = tab.figures[16]->Nickname  ########tak powinno byc???/????????
+	 Board[0][3] = tab.figures[16]->Nickname; //Queen
+	 /*Board[0][0] = tab.figures[20]->Nickname; // ROOK
+	 Board[0][1] = tab.figures[22]->Nickname; //Knight
+	 Board[0][2] = tab.figures[18]->Nickname; //Bishop
+	 Board[0][4] = tab.figures[17]->Nickname; // King
+	 Board[0][5] = tab.figures[19]->Nickname; //Bishop
+	 Board[0][6] = tab.figures[23]->Nickname; // Knight
+	 Board[0][7] = tab.figures[21]->Nickname; // Rook*/
+	/* Board[7][0] = 'w';
+	 Board[7][1] = 'k';
+	 Board[7][2] = 'g';
+	 Board[7][3] = 'q';
+	 Board[7][4] = "ki";
+	 Board[7][5] = 'g';
+	 Board[7][6] = 'k';
+	 Board[7][7] = 'w';*/
 	 
-/* OPENCV wymagane
-	 int blockSize = 75;
-	 int imageSize = blockSize * 8;
-	 Mat chessBoard(imageSize, imageSize, CV_8UC3, Scalar::all(0));
-	 unsigned char color = 0;
-
-	 for (int i = 0; i<imageSize; i = i + blockSize) {
-		 color = ~color;
-		 for (int j = 0; j<imageSize; j = j + blockSize) {
-			 Mat ROI = chessBoard(Rect(i, j, blockSize, blockSize));
-			 ROI.setTo(Scalar::all(color));
-			 color = ~color;
-		 }
-	 }
-	 imshow("Chess board", chessBoard);
-*/
-
 //Show array in console
 	 for (int i = 0; i < BoardHeight; i++)
 	 {

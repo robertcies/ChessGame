@@ -8,11 +8,10 @@
 class Knight : public ChessFigure
 {
 public:
-	Knight(string, bool, int, int);
+	Knight(string, bool, int, int,string);
 	~Knight();
 
 	bool IsMovePossible(int, int);		// validation of movement  ------->maybe highlit possible ways of selected figure?
-
 };
 
 #endif
