@@ -17,17 +17,18 @@ ChessBoard::~ChessBoard()
 void ChessBoard::CreateBoard()
 {
 	ChessFigure tab;
+	tab.CreateFigures();
+
 	 for (int i = 1; i<BoardHeight-2; i++)
 		 for (int j = 0; j<BoardWidth; j++)
 		 {
 			 Board[i][j] = " ";
 		 }
 	 for (int i = 0; i<BoardWidth; i++)
-		 Board[1][i] = 'P';
+		 Board[1][i] = tab.figures[i+8]->Nickname; //Pawn
 	 for (int i = 0; i<BoardWidth; i++)
-		 Board[6][i] = 'p';
+		 Board[6][i] = tab.figures[i]->Nickname; //Pawn
 
-	 tab.CreateFigures();
 	 // Board[tab.figures[16]->PositionX][tab.figures[16]->PositionY] = tab.figures[16]->Nickname  ########tak powinno byc???/????????
 	 Board[0][3] = tab.figures[16]->Nickname; //Queen
 	 Board[0][0] = tab.figures[20]->Nickname; // ROOK
@@ -37,14 +38,14 @@ void ChessBoard::CreateBoard()
 	 Board[0][5] = tab.figures[19]->Nickname; //Bishop
 	 Board[0][6] = tab.figures[23]->Nickname; // Knight
 	 Board[0][7] = tab.figures[21]->Nickname; // Rook
-	/* Board[7][0] = 'w';
-	 Board[7][1] = 'k';
-	 Board[7][2] = 'g';
-	 Board[7][3] = 'q';
-	 Board[7][4] = "ki";
-	 Board[7][5] = 'g';
-	 Board[7][6] = 'k';
-	 Board[7][7] = 'w';*/
+	 Board[7][0] = tab.figures[28]->Nickname; // ROOK
+	 Board[7][1] = tab.figures[30]->Nickname; //Knight
+	 Board[7][2] = tab.figures[26]->Nickname; //Bishop
+	 Board[7][3] = tab.figures[24]->Nickname; //Queen
+	 Board[7][4] = tab.figures[25]->Nickname; // King
+	 Board[7][5] = tab.figures[27]->Nickname; //Bishop
+	 Board[7][6] = tab.figures[31]->Nickname; //Knight
+	 Board[7][7] = tab.figures[29]->Nickname; // ROOK
 	 
 //Show array in console
 	 for (int i = 0; i < BoardHeight; i++)

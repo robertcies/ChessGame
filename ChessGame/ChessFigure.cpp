@@ -64,7 +64,7 @@ void ChessFigure::CreateFigures()
 	
 }
 bool ChessFigure::GetFigure(int PosX, int PosY) //check if there is any figure on specific field (check if can move to this field)
-													{
+{
 	for (int i = 0; i < 32; i++) ////// WARTOSC DYNAMICZNA - NIE 32
 	{
 		if (figures[i]->PositionX ==PosX && figures[i]->PositionY == PosY)  

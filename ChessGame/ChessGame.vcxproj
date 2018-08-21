@@ -137,9 +137,11 @@
     <ClCompile Include="Bishop.cpp" />
     <ClCompile Include="ChessBoard.cpp" />
     <ClCompile Include="ChessFigure.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="King.cpp" />
     <ClCompile Include="Knight.cpp" />
     <ClCompile Include="Pawn.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Queeen.cpp" />
     <ClCompile Include="Rook.cpp" />
     <ClCompile Include="UnbelievableChessgame1.cpp" />
@@ -148,9 +150,11 @@
     <ClInclude Include="Bishop.h" />
     <ClInclude Include="ChessBoard.h" />
     <ClInclude Include="ChessFigure.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="King.h" />
     <ClInclude Include="Knight.h" />
     <ClInclude Include="Pawn.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Queeen.h" />
     <ClInclude Include="Rook.h" />
     <ClInclude Include="UnbelievableChessgame1.h">

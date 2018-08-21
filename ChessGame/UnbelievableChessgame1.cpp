@@ -1,7 +1,8 @@
 #include "UnbelievableChessgame1.h"
 #include "ChessBoard.h"
 #include "ChessFigure.h"
-#include "Pawn.h"
+#include "Game.h"
+#include "Player.h"
 
 #include <iostream>
 #include<string>
@@ -10,6 +11,7 @@ using namespace System::Windows::Forms;
 
 //ChessFigure figure;
 ChessBoard board; //Global variable
+Game game;
 
 
 [STAThread]
@@ -26,7 +28,7 @@ void main(array<String^>^ args)
 	//void DrawRectangleInt(PaintEventArgs^ e);
 	ChessFigure CreateFigures();
 	*/
-
+	game.ManageGame();
 	//figure.CreateFigures();
 	std::cout << "TEST";
 	board.UpdateBoard();
